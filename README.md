@@ -15,3 +15,9 @@ In explicit mode (the default), it monitors a list of ZooKeeper servers given as
 
 In exhibitor mode, the exporter will automatically discover servers by querying [Exhibitor]. Command lines args are assumed to be a list of Exhibitor nodes. To enable exhibitor mode, use the `-exporter.discovery.exhibitor` flag.
 
+
+
+// 启动参数 需要监控zk的地址:zk的端口 上报的端口
+// 10.138.16.194:2181 :9123
+
+

@@ -199,7 +199,18 @@ func (e *exporter) pollServer(server string, ch chan<- prometheus.Metric, wg *sy
 
 func main() {
 	flag.Parse()
-	exporter := newZooKeeperExporter(flag.Args(), *useExhibitor)
+	zkAddress := make([]string, 0)
+	if flag.Args() != nil {
+		for index, value := range flag.Args() {
+			fmt.Printf("flag.Args[%d]=%d \n", index, value)
+		}
+		if len(flag.Args()) > 1 {
+			*addr = flag.Args()[len(flag.Args())-1]
+		}
+		// 数组拷贝并移除最后一位
+		zkAddress = flag.Args()[0 : len(flag.Args())-1]
+	}
+	exporter := newZooKeeperExporter(zkAddress, *useExhibitor)
 	prometheus.MustRegister(exporter)
 
 	http.Handle(*metricPath, prometheus.Handler())
@@ -208,6 +219,5 @@ func main() {
 	})
 
 	log.Info("starting mesos_exporter on ", *addr)
-
 	log.Fatal(http.ListenAndServe(*addr, nil))
 }
