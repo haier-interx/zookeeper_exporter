@@ -204,6 +204,7 @@ func main() {
 		for index, value := range flag.Args() {
 			fmt.Printf("flag.Args[%d]=%d \n", index, value)
 		}
+		//获取指定的上报端口
 		if len(flag.Args()) > 1 {
 			*addr = flag.Args()[len(flag.Args())-1]
 		}
