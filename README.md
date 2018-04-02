@@ -18,6 +18,6 @@ In exhibitor mode, the exporter will automatically discover servers by querying 
 
 
 // 启动参数 需要监控zk的地址:zk的端口 上报的端口
-// 10.138.16.194:2181 :9123
+// 10.138.8.223:2181 10.138.8.224:2181 10.138.8.225:2181 :9123
 
 
