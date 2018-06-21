@@ -21,3 +21,7 @@ In exhibitor mode, the exporter will automatically discover servers by querying 
 // 10.138.8.223:2181 10.138.8.224:2181 10.138.8.225:2181 :9123
 
 
+指标太少 替换为：
+https://github.com/carlpett/zookeeper_exporter
+
+
